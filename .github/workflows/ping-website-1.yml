@@ -1,0 +1,19 @@
+name: Ping website
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0/6 * * * *'
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+env:
+  WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
+jobs:
+  run-e2e:
+    name: Ping website
+    timeout-minutes: 60
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Ping
+        run: |
+          curl "$WEBSITE_URL"

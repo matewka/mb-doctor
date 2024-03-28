@@ -2,7 +2,6 @@ name: Ping website
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0/6 * * * *'
     - cron: '3/6 * * * *'
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
