@@ -1,4 +1,4 @@
-name: Ping website
+name: Ping website 2
 on:
   workflow_dispatch:
   schedule:
@@ -9,7 +9,7 @@ concurrency:
 env:
   WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
 jobs:
-  run-e2e:
+  run:
     name: Ping website
     timeout-minutes: 60
     runs-on: ubuntu-22.04
