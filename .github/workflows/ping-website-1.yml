@@ -10,7 +10,7 @@ env:
   WEBSITE_URL: ${{ secrets.WEBSITE_URL }}
 jobs:
   run:
-    name: Ping website
+    name: Ping website 1
     timeout-minutes: 60
     runs-on: ubuntu-22.04
     steps:
